@@ -3,6 +3,8 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in turnstiled.gemspec.
 gemspec
 
+ruby "~> 3.4.0"
+
 gem "puma"
 
 gem "sqlite3"

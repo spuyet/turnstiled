@@ -3,15 +3,15 @@
 module Turnstiled
   class Verifier
     def verify(request)
-      return request.params['cf-turnstile-response'] == '1' if Turnstiled.mock
+      return request.params["cf-turnstile-response"] == "1" if Turnstiled.mock
 
-      response = client.post('siteverify', {
+      response = client.post("siteverify", {
         secret: Turnstiled.site_secret,
-        response: request.params['cf-turnstile-response'],
-        remoteip: request.remote_ip,
+        response: request.params["cf-turnstile-response"],
+        remoteip: request.remote_ip
       })
 
-      response.body.fetch('success', false)
+      response.body.fetch("success", false)
     end
 
     def client
@@ -23,10 +23,10 @@ module Turnstiled
 
     def client_options
       {
-        url: 'https://challenges.cloudflare.com/turnstile/v0',
+        url: "https://challenges.cloudflare.com/turnstile/v0",
         request: {
-          timeout: 3,
-        },
+          timeout: 3
+        }
       }
     end
   end
