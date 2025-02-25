@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    turnstiled (0.1.1)
+    turnstiled (0.1.4)
       faraday
-      rails (~> 7.0, >= 7.0.0)
+      rails (>= 6.0.0)
 
 GEM
   remote: https://rubygems.org/
