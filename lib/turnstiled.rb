@@ -1,10 +1,9 @@
-require "turnstiled/version"
-require "turnstiled/engine"
 
 module Turnstiled
   autoload :ControllerMethods, "turnstiled/controller_methods"
   autoload :ViewHelper, "turnstiled/view_helper"
   autoload :Verifier, "turnstiled/verifier"
+  autoload :VERSION, "turnstiled/version"
 
   mattr_accessor :site_key
   mattr_accessor :site_secret
@@ -14,3 +13,5 @@ module Turnstiled
     Verifier.new.verify(request)
   end
 end
+
+require "turnstiled/engine" if defined?(Rails)

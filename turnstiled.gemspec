@@ -2,7 +2,7 @@ require_relative "lib/turnstiled/version"
 
 Gem::Specification.new do |spec|
   spec.name        = "turnstiled"
-  spec.version     = Turnstiled::VERSION
+  spec.version     = File.read('VERSION')
   spec.authors     = [ "Displayful", "Henrik Hauge Bjørnskov" ]
   spec.email       = [ "hb@displayful.co" ]
   spec.license     = "MIT"
