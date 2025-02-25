@@ -1,28 +1,54 @@
-# Turnstiled
-Short description and motivation.
+Turnstiled
+==========
 
-## Usage
-How to use my plugin.
+Turnstiled makes it easy to add the Cloudflare Turnstile Captcha to your Rails app.
 
-## Installation
-Add this line to your application's Gemfile:
+For development, it even inlucdes a Mock widget.
 
-```ruby
+Getting Usage
+-------------
+
+### Installation
+
+First install the gem by adding this line to your application's Gemfile:
+
+``` ruby
 gem "turnstiled"
 ```
 
-And then execute:
-```bash
+And executing:
+
+``` bash
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install turnstiled
+### Configuration
+
+Create a file called `config/initializers/turnstiled.rb` and add the following:
+
+``` ruby
+Turnstiled.configure do |config|
+  config.api_key = "YOUR_API_KEY"
+  config.api_secret = "YOUR_API_SECRET"
+end
 ```
 
-## Contributing
-Contribution directions go here.
+In your layout, add the widget to the head of the document:
 
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+``` erb
+<%= turnstiled_javascript_tag %>
+```
+
+In test and development, it will include a mock widget that fires the callback after 2 seconds.
+
+The mock widget will send the `cf-turnstile-response` parameter with a value of `1`.
+
+In your controller, you also need to verify the response with the following:
+
+``` ruby
+class PostsController < ApplicationController
+  verify_turnstile_requwst only: %i[create]
+end
+```
+
+The `verify_turnstile_requwst` takes the same options as a `before_action` method call.
