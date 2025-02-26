@@ -27,10 +27,8 @@ $ bundle
 Create a file called `config/initializers/turnstiled.rb` and add the following:
 
 ``` ruby
-Turnstiled.configure do |config|
-  config.api_key = "YOUR_API_KEY"
-  config.api_secret = "YOUR_API_SECRET"
-end
+Turnstiled.site_key = "YOUR SITE KEY"
+Turnstiled.site_secret = "YOUR SITE SECRET"
 ```
 
 In your layout, add the widget to the head of the document:
