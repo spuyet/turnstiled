@@ -45,8 +45,8 @@ In your controller, you also need to verify the response with the following:
 
 ``` ruby
 class PostsController < ApplicationController
-  verify_turnstile_requwst only: %i[create]
+  verify_turnstile_request only: %i[create]
 end
 ```
 
-The `verify_turnstile_requwst` takes the same options as a `before_action` method call.
+The `verify_turnstile_request` takes the same options as a `before_action` method call.
