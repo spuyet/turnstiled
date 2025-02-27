@@ -41,6 +41,14 @@ In test and development, it will include a mock widget that fires the callback a
 
 The mock widget will send the `cf-turnstile-response` parameter with a value of `1`.
 
+Within a form make sure to render the widget:
+
+``` erb
+<%= form_with model: @some_model do %>
+  <%= turnstile_tag %>
+<% end %>
+```
+
 In your controller, you also need to verify the response with the following:
 
 ``` ruby
