@@ -13,6 +13,10 @@ Gem::Specification.new do |spec|
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
+  spec.metadata["source_code_uri"]  = "https://github.com/displayful/turnstiled"
+  spec.metadata["homepage_uri"]     = "https://github.com/displayful/turnstiled"
+  spec.metadata["bug_tracker_uri"]  = "https://github.com/displayful/turnstiled/issues"
+
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md", "VERSION"]
   end
