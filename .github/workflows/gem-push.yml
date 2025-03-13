@@ -30,6 +30,9 @@ jobs:
         id: version
         run: echo "version=$(rake version)" >> $GITHUB_OUTPUT
 
+      - name: Release
+        uses: rubygems/release-gem@v1
+
       - name: Create GitHub Release
         uses: actions/github-script@v7
         with:
@@ -43,5 +46,3 @@ jobs:
               generate_release_notes: true,
             })
 
-
-      - uses: rubygems/release-gem@v1
