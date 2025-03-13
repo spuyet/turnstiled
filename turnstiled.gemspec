@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.metadata["bug_tracker_uri"]  = "https://github.com/displayful/turnstiled/issues"
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md", "VERSION"]
+    Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
   end
 
   spec.add_runtime_dependency 'rails', '>= 6.0.0'
