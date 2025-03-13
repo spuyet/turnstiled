@@ -1,11 +1,7 @@
 name: Ruby Gem
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - VERSION
+  workflow_dispatch:
 
 jobs:
   build:
@@ -22,7 +18,7 @@ jobs:
 
       - name: Read VERSION
         id: version
-        run: echo "version=$(cat VERSION)" >> $GITHUB_OUTPUT
+        run: echo "version=$(rake version)" >> $GITHUB_OUTPUT
 
       - name: Set up Ruby
         uses: actions/setup-ruby@v1

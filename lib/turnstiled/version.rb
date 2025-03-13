@@ -1,3 +1,3 @@
 module Turnstiled
-  VERSION = File.read(File.expand_path("../../../VERSION", __FILE__)).strip
+  VERSION = "0.1.7"
 end
