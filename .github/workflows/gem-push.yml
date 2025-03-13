@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           bundler-cache: true
-          version: ruby
+          ruby-version: ruby
 
       - name: Create GitHub Release
         uses: actions/github-script@v7
