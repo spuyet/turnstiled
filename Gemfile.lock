@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    turnstiled (0.1.10)
+    turnstiled (0.1.11)
       faraday
       rails (>= 6.0.0)
 
@@ -266,9 +266,6 @@ PLATFORMS
 DEPENDENCIES
   rubocop-rails-omakase
   turnstiled!
-
-RUBY VERSION
-   ruby 3.4.1p0
 
 BUNDLED WITH
    2.6.3
