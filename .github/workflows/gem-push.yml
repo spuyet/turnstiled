@@ -1,7 +1,11 @@
 name: Ruby Gem
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - lib/turnstiled/version.rb
 
 jobs:
   build:
