@@ -34,7 +34,7 @@ Turnstiled.site_secret = "YOUR SITE SECRET"
 In your layout, add the widget to the head of the document:
 
 ``` erb
-<%= turnstiled_javascript_tag %>
+<%= turnstile_javascript_tag %>
 ```
 
 In test and development, it will include a mock widget that fires the callback after 2 seconds.
