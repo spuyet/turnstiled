@@ -5,8 +5,8 @@ module Turnstiled
     extend ActiveSupport::Concern
 
     class_methods do
-      def verify_turnstile_request(**)
-        before_action(:verify_turnstile_request, **)
+      def verify_turnstile_request(**args)
+        before_action(:verify_turnstile_request, **args)
       end
     end
 
